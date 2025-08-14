@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap:https://trad-alrowais.github.io/my_arabic_blog/sitemap.xml
-
-
