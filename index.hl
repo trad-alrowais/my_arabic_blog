@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المدونة العربية للثقافة والإعلام</title>
+
+  <!-- تحسينات SEO -->
+  <meta name="description" content="المدونة العربية للثقافة والإعلام - مقالات، أفكار، وإلهام يومي.">
+  <meta name="keywords" content="مدونة, ثقافة, إعلام, مقالات, طراد الرويس">
+  <meta name="author" content="د. طراد الرويس">
+
+  <!-- OG Tags لمشاركة أفضل على فيسبوك/تويتر -->
+  <meta property="og:title" content="المدونة العربية للثقافة والإعلام">
+  <meta property="og:description" content="منصة معرفية لإثراء المحتوى العربي.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+
+  <!-- خط جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* هيدر */
+    header {
+      background: linear-gradient(135deg, #004d40, #00796b);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeInDown 1s ease;
+    }
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* قائمة التنقل */
+    nav {
+      background: #004d40;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #00796b;
+    }
+
+    /* المحتوى */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+      gap: 20px;
+    }
+    .content {
+      flex: 3;
+      min-width: 300px;
+    }
+    .post {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+    .post h2 {
+      margin-bottom: 10px;
+      color: #004d40;
+    }
+
+    /* الشريط الجانبي */
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+    .sidebar h3 {
+      margin-bottom: 10px;
+      color: #00796b;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+    .sidebar ul li a {
+      color: #004d40;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .sidebar ul li a:hover {
+      color: #00796b;
+    }
+
+    /* نموذج الاتصال */
+    #contact {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    form button {
+      background: #004d40;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #00796b;
+    }
+
+    /* زر العودة للأعلى */
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #00796b;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    #toTop:hover {
+      background: #004d40;
+    }
+
+    /* فوتر */
+    footer {
+      background: linear-gradient(135deg, #004d40, #00796b);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* أنيميشن */
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+
+    /* تجاوب */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <h1>المدونة العربية للثقافة والإعلام</h1>
+    <p>مقالات، أفكار، وإلهام يومي</p>
+  </header>
+
+  <!-- القائمة -->
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#articles">المقالات</a>
+    <a href="#about">من نحن</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
+
+  <!-- المحتوى -->
+  <div class="container">
+    <div class="content" id="articles">
+      <div class="post">
+        <h2>عنوان المقال الأول</h2>
+        <p>هذا مثال لمقال في المدونة. يمكنك إضافة نصوص طويلة وصور وروابط هنا.</p>
+      </div>
+      <div class="post">
+        <h2>عنوان المقال الثاني</h2>
+        <p>هذا مثال آخر لمقال. يمكن تطويره لاحقًا وربطه بقسم المقالات.</p>
+      </div>
+    </div>
+
+    <aside class="sidebar" id="about">
+      <h3>حول المدونة</h3>
+      <p>هذه المدونة تسعى لإثراء المحتوى العربي بالمعرفة والثقافة والإعلام.</p>
+      <h3>روابط سريعة</h3>
+      <ul>
+        <li><a href="#">مقالات مميزة</a></li>
+        <li><a href="#">الأكثر قراءة</a></li>
+        <li><a href="#">الأرشيف</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- نموذج الاتصال -->
+  <section id="contact">
+    <h2>اتصل بنا</h2>
+    <form action="https://formspree.io/f/your_form_id" method="POST">
+      <label>الاسم</label>
+      <input type="text" name="name" required>
+      <label>البريد الإلكتروني</label>
+      <input type="email" name="email" required>
+      <label>الرسالة</label>
+      <textarea name="message" rows="5" required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+
+  <!-- زر العودة للأعلى -->
+  <button id="toTop">↑</button>
+
+  <!-- الفوتر -->
+  <footer>
+    <p>جميع الحقوق محفوظة © 2025 - د. طراد الرويس</p>
+  </footer>
+
+  <script>
+    // زر العودة للأعلى
+    const toTop = document.getElementById("toTop");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    };
+    toTop.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
